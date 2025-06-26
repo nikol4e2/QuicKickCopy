@@ -1,0 +1,169 @@
+.testimonial-max-width {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.testimonial-container10 {
+    gap: var(--dl-layout-space-unit);
+    display: flex;
+    max-width: 600px;
+    align-items: center;
+    margin-bottom: var(--dl-layout-space-fourunits);
+    flex-direction: column;
+}
+
+.testimonial-text11 {
+    text-align: center;
+}
+
+.testimonial-container12 {
+    gap: var(--dl-layout-space-unit);
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.testimonial-container13 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimonial-text14 {
+    text-align: left;
+}
+
+.testimonial-container14 {
+    gap: var(--dl-layout-space-unit);
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.testimonial-container15 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimonial-text17 {
+    text-align: left;
+}
+
+.testimonial-container16 {
+    gap: var(--dl-layout-space-unit);
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+.testimonial-container17 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimonial-text20 {
+    text-align: left;
+}
+
+.testimonial-container18 {
+    gap: var(--dl-layout-space-unit);
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+
+.testimonial-container19 {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.testimonial-text23 {
+    text-align: left;
+}
+.thq-body-large
+{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.testimonial-text11{
+    font-size: 1.5rem;
+}
+@media (max-width: 991px) {
+    .testimonial-container10 {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 767px) {
+    .thq-section-padding {
+        max-width: 90%;
+    }
+
+    .testimonial-container10 {
+        max-width: 100%;
+        margin-bottom: var(--dl-layout-space-oneandhalfunits);
+    }
+
+    .testimonial-card1,
+    .testimonial-card2,
+    .testimonial-card3,
+    .testimonial-card4 {
+        width: 100%;
+    }
+
+    .testimonial-image1,
+    .testimonial-image2,
+    .testimonial-image3,
+    .testimonial-image4 {
+        max-width: 120px;
+    }
+
+    .testimonial-body-large {
+        font-size: 14px;
+    }
+
+    .testimonial-body-small {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-body-large {
+        font-size: 12px;
+    }
+
+    .testimonial-body-small {
+        font-size: 10px;
+    }
+
+    .testimonial-image1,
+    .testimonial-image2,
+    .testimonial-image3,
+    .testimonial-image4 {
+        max-width: 100px;
+    }
+}
