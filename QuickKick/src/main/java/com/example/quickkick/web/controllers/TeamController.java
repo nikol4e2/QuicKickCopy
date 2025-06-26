@@ -19,7 +19,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/teams")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://quick-kick-fe-copy.vercel.app/")
 public class TeamController {
 
     private final TeamService teamService;

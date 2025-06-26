@@ -13,7 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/playing-matches")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://quick-kick-fe-copy.vercel.app/")
 public class PlayingMatchController {
 
     private final PlayingMatchService playingMatchService;
