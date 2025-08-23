@@ -157,14 +157,14 @@ public class PlayingMatchServiceImpl implements PlayingMatchService {
 
     @Override
     public void signalHalfTime(Long playingMatchId) {
-        Optional<PlayingMatch> playingMatch=this.playingMatchRepository.findById(playingMatchId);
-        if (playingMatch.isPresent())
-        {
-            playingMatch.get().setHalfTimeCounter(2);
-            playingMatch.get().setStatus(PlayingMatchStatus.HALF_TIME_TIMEOUT);
-            playingMatch.get().setTimer(playingMatch.get().getMinutesForHalfTime());
-            this.playingMatchRepository.save(playingMatch.get());
-        }
+        PlayingMatch playingMatch = playingMatchRepository.findById(playingMatchId)
+                .orElseThrow(() -> new MatchNotFoundException());
+
+        playingMatch.setHalfTimeCounter(2);
+        playingMatch.setStatus(PlayingMatchStatus.HALF_TIME_TIMEOUT);
+        playingMatch.setTimer(playingMatch.getMinutesForHalfTime());
+
+        playingMatchRepository.save(playingMatch);
     }
 
     @Override
@@ -184,8 +184,8 @@ public class PlayingMatchServiceImpl implements PlayingMatchService {
     public void signalPlayingAgain(Long playingMatchId) {
         PlayingMatch playingMatch = this.playingMatchRepository.findById(playingMatchId)
                 .orElseThrow(MatchNotFoundException::new);
-            playingMatch.setStatus(PlayingMatchStatus.PLAYING);
-
+        playingMatch.setStatus(PlayingMatchStatus.PLAYING);
+        this.playingMatchRepository.save(playingMatch);
     }
 
     @Override
@@ -211,9 +211,8 @@ public class PlayingMatchServiceImpl implements PlayingMatchService {
 
     @Override
     public void deletePlayingMatch(Long playingMatchId) {
-        if(this.playingMatchRepository.existsById(playingMatchId)) {
-            this.playingMatchRepository.deleteById(playingMatchId);
-        }
+        playingMatchRepository.findById(playingMatchId).ifPresent(playingMatchRepository::delete);
+
     }
 }
 
