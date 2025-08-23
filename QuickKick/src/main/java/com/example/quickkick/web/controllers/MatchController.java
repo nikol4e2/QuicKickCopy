@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/matches")
-@CrossOrigin(origins = "https://quick-kick-fe-copy.vercel.app/")
+@CrossOrigin(origins = "https://turnirandrej.vercel.app")
 public class MatchController {
 
 

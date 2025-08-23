@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/players")
-@CrossOrigin(origins = "https://quick-kick-fe-copy.vercel.app/")
+@CrossOrigin(origins = "https://turnirandrej.vercel.app")
 public class PlayerController {
 
 
