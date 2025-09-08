@@ -12,6 +12,10 @@ import com.example.quickkick.web.model.enums.MatchStatus;
 import com.example.quickkick.web.service.MatchService;
 import com.example.quickkick.web.service.PlayingMatchService;
 import com.example.quickkick.web.service.TeamService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -119,6 +123,16 @@ public class MatchController {
         }
         return ResponseEntity.notFound().build();
 
+    }
+
+    @GetMapping("/finished")
+    public Page<Match> getFinishedMatches(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size
+    )
+    {
+        Pageable pageable = PageRequest.of(page, size, Sort.by("date").descending());
+        return matchService.findAllByStatusAndPageable(MatchStatus.FINISHED, pageable);
     }
 
 
